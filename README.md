@@ -1,6 +1,7 @@
 # devops_netology_2
-5. * ![Screenshot_3](https://user-images.githubusercontent.com/95320903/149648094-e9c46795-861e-4a68-9af0-b7e891b401a3.png) 
-6.  * config.vm.provider "virtualbox" do |v|
+5. 
+ * ![Screenshot_3](https://user-images.githubusercontent.com/95320903/149648094-e9c46795-861e-4a68-9af0-b7e891b401a3.png) 
+7.  * config.vm.provider "virtualbox" do |v|
  * v.memory = 1024
  * v.cpus = 2
 * end 
