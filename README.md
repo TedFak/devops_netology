@@ -10,7 +10,6 @@
  8. Значение переменной HISTSIZE используется как количество команд для сохранения в списке истории. Строка 3011 
 * Значение переменной HISTFILESIZE используется кол-во строк. Строка 3018 
 * Директива ignoreboth является сокращением для ignorespace и ignoredups. 
- 9. Не получается выполнить поиск /{}, не смог найти.
-  Нашел только ! case  coproc  do done elif else esac fi for function if in select then until while { } time [[ ]]  
+ 9. Не смог найти. Нашел только ! case  coproc  do done elif else esac fi for function if in select then until while { } time [[ ]]  
 не уверен что это то на 179 строчке. 
  10.
