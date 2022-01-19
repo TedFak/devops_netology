@@ -14,12 +14,11 @@
 10.
 11.  Возвращает статус 0 или 1 в зависимости от оценки выражения условного выражения.
 12.  
-$ ls -l 
- cd tmp
- mkdir new_path_directory
- cp /bin/bash /tmp/new_path_directory/
- PATH=/tmp/new_path_directory/:$PATH
- type -a bash
+* cd tmp
+* mkdir new_path_directory
+* cp /bin/bash /tmp/new_path_directory/
+* PATH=/tmp/new_path_directory/:$PATH
+* type -a bash
 ![image](https://user-images.githubusercontent.com/95320903/150048934-a469238c-3497-473a-abe5-2137da9b5235.png)
 
 13 .  at выполняет команду в определеное время. batch выполняет команды, когда позволяют уровни загрузки системы.
