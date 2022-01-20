@@ -31,4 +31,5 @@
  Скопировал ключ в /.ssh/authorized_keys
  
  ![image](https://user-images.githubusercontent.com/95320903/150366945-ec738d03-71cd-4363-841c-c52f1e52bcd9.png)
+
 13.
