@@ -11,7 +11,11 @@
 
 5. ![image](https://user-images.githubusercontent.com/95320903/150143132-2d33662d-56f4-46a1-9196-e7fd3ea27bd8.png)
 6.
+
 7.bash 5>&1 Создаст дескриптор 5 и перенапрвет на stdout
 echo netology > /proc/$$/fd/5 отправит stdout на созданный дескриптор 5
  ![image](https://user-images.githubusercontent.com/95320903/150292903-0183ac34-e04b-413b-8f0f-326feea550c7.png)
-8.
+
+8.  ![image](https://user-images.githubusercontent.com/95320903/150311152-7022370d-bbf3-444e-b52c-94ecad3f8404.png)
+
+![image](https://user-images.githubusercontent.com/95320903/150311104-2e9c0b09-cfa1-4751-8a21-f6b4d520beef.png)
