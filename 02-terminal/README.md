@@ -13,7 +13,7 @@
 6.
 
 7. bash 5>&1 Создаст дескриптор 5 и перенапрвет на stdout
-echo netology > /proc/$$/fd/5 отправит stdout на созданный дескриптор 5
+echo netology > /proc/$$/fd/5 отправит stdout на созданный дескриптор 5 
  ![image](https://user-images.githubusercontent.com/95320903/150292903-0183ac34-e04b-413b-8f0f-326feea550c7.png)
 
 8.  ![image](https://user-images.githubusercontent.com/95320903/150311152-7022370d-bbf3-444e-b52c-94ecad3f8404.png)
