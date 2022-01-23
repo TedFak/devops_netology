@@ -19,9 +19,9 @@
  ![image](https://user-images.githubusercontent.com/95320903/150292903-0183ac34-e04b-413b-8f0f-326feea550c7.png)
 
 8. 
- ![image](https://user-images.githubusercontent.com/95320903/150311152-7022370d-bbf3-444e-b52c-94ecad3f8404.png)
+ ![image](https://user-images.githubusercontent.com/95320903/150685453-280e4da3-7ffe-4490-b94a-d145f9e0eeac.png)
 
-![image](https://user-images.githubusercontent.com/95320903/150311104-2e9c0b09-cfa1-4751-8a21-f6b4d520beef.png)
+![image](https://user-images.githubusercontent.com/95320903/150685438-57a7e81f-489e-434b-adbf-ac9f20c2f837.png)
 
 9. Выведет все переменные окружения с которыми работает процесс. vim proc/5671/environ.
 10. /proc/[pid]/cmdline Этот доступный только для чтения файл содержит полную командную строку для процесса, если этот процесс не является зомби.           
