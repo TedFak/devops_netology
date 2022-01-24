@@ -10,7 +10,7 @@
  
   root@vagrant:~# sudo lsof -p 1714
  
-  root@vagrant:~# kill 1714
+  root@vagrant:~# truncate -s 0 /proc/1714/fd/1
  
  4. Не занимают память, только пустую запись в таблице процессов.
 
