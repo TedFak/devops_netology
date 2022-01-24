@@ -32,5 +32,6 @@
  
  ![image](https://user-images.githubusercontent.com/95320903/150366945-ec738d03-71cd-4363-841c-c52f1e52bcd9.png)
 
-13. 
+13. ![image](https://user-images.githubusercontent.com/95320903/150776529-5cb935fd-a183-48c3-8f24-de93c7066c31.png)
+
 14. sudo tee допишет файл и выведет добавленную строку в консоль. А sudo echo выполняется перенаправление оболочкой, у которой нет разрешения на запись.
