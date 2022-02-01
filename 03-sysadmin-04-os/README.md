@@ -10,5 +10,7 @@
  #### 2. 
  CPU 
 `node_cpu_seconds_total{cpu="0",mode="idle"} 2526.39`
+
 `node_cpu_seconds_total{cpu="0",mode="iowait"} 7.22`
+
 `node_cpu_seconds_total{cpu="0",mode="irq"} 0`
