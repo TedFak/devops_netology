@@ -23,3 +23,11 @@
 `node_disk_writes_merged_total{device="dm-0"} 0`
 
 `node_disk_writes_merged_total{device="sda"} 1559`
+##### NETWORK
+`node_network_transmit_packets_total{device="eth0"} 4352`
+
+`node_network_transmit_packets_total{device="lo"} 736`
+
+`node_network_transmit_bytes_total{device="eth0"} 733237`
+
+`node_network_transmit_bytes_total{device="lo"} 967884`
