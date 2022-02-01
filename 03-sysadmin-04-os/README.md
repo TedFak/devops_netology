@@ -7,4 +7,6 @@
  ##### C.
   ![C.](https://user-images.githubusercontent.com/95320903/152066817-32f2af37-960c-4b4f-abf2-94c859861aab.png)
 
- 
+ #### 2. CPU 'node_cpu_seconds_total{cpu="0",mode="idle"} 2526.39'
+'node_cpu_seconds_total{cpu="0",mode="iowait"} 7.22'
+'node_cpu_seconds_total{cpu="0",mode="irq"} 0'
