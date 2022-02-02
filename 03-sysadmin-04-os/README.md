@@ -31,3 +31,6 @@
 `node_network_transmit_bytes_total{device="eth0"} 733237`
 
 `node_network_transmit_bytes_total{device="lo"} 967884`
+
+### 3.
+
