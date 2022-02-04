@@ -55,3 +55,20 @@ vagrant@vagrant:~$ ulimit -Hn #Жесткий лимит может быть п�
 vagrant@vagrant:~$ ulimit -Sn #Мягкий предел может быть изменен процессом в любое время.
 1024
 ``` 
+### 6.
+```bash 
+root@vagrant:~# unshare -p -f --mount-proc sleep 1h
+
+^C
+root@vagrant:~# ps u |grep "sleep"
+root        3157  0.0  0.0   5476   592 pts/0    S    14:20   0:00 sleep 1h
+root        3159  0.0  0.0   6432   736 pts/0    S+   14:21   0:00 grep --color=auto sleep
+root@vagrant:~# ps -e |grep "sleep"
+   3157 pts/0    00:00:00 sleep
+root@vagrant:~# nsenter -t 3157 -p -m -F
+root@vagrant:/# ps
+    PID TTY          TIME CMD
+      1 pts/0    00:00:00 sleep
+     12 pts/0    00:00:00 ps
+root@vagrant:/#
+```
