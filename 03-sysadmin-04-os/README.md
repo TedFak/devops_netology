@@ -35,4 +35,10 @@
 ### 3. 
  ![image](https://user-images.githubusercontent.com/95320903/152520458-922a56e8-c48d-4cf1-9b04-bf1120d02358.png)
 
-
+### 4.
+```bash
+vagrant@vagrant:~$ dmesg | grep "virtual"
+[    0.003258] CPU MTRRs all blank - virtualized system.
+[    0.095327] Booting paravirtualized kernel on KVM
+[    2.910080] systemd[1]: Detected virtualization oracle.
+```
