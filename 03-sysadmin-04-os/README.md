@@ -44,7 +44,7 @@ vagrant@vagrant:~$ dmesg | grep "virtual"
 [    2.910080] systemd[1]: Detected virtualization oracle.
 ```
 ### 5. 
-Лимит открытых дискриптор
+Лимит открытых дескрипторов
 ```bash
 vagrant@vagrant:~$ sysctl fs.nr_open
 fs.nr_open = 1048576
