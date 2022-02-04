@@ -32,5 +32,7 @@
 
 `node_network_transmit_bytes_total{device="lo"} 967884`
 
-### 3.
+### 3. 
+ ![image](https://user-images.githubusercontent.com/95320903/152520458-922a56e8-c48d-4cf1-9b04-bf1120d02358.png)
+
 
