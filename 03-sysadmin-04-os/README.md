@@ -1,5 +1,7 @@
 
 ### 1. 
+![image](https://user-images.githubusercontent.com/95320903/152739172-2befcd1d-fecb-42b7-a908-72a8c4094c8c.png)
+
  ##### B. 
  ![B.](https://user-images.githubusercontent.com/95320903/152066251-b1f6f31c-cf4a-4813-8ca0-491c685dae0a.png)
  ##### C.
