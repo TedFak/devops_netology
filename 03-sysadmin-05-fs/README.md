@@ -65,4 +65,67 @@ root@vagrant:~# lvs
   ubuntu-lv ubuntu-vg -wi-ao----  31.50g
   lvol0     vg        -wi-a----- 100.00m
   ```
+ ### 11.
+ ```bash
+ root@vagrant:~# mkfs.ext4 /dev/vg/lvol0
+mke2fs 1.45.5 (07-Jan-2020)
+Creating filesystem with 25600 4k blocks and 25600 inodes
 
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: done
+```
+### 12.
+```bash
+mkdir /tmp/new
+mount /dev/vg/lvol0 /tmp/new
+```
+### 14.
+![image](https://user-images.githubusercontent.com/95320903/153075252-42183b25-3485-4f90-81e5-a8358fe0869d.png)
+### 15.
+```bash
+root@vagrant:~# gzip -t /tmp/new/test.gz
+root@vagrant:~# echo $?
+0
+```
+### 16.
+```bash 
+root@vagrant:~# pvmove /dev/md0 /dev/md1
+  /dev/md0: Moved: 12.00%
+
+  /dev/md0: Moved: 100.00%
+  ```
+  ### 17.
+  ```bash
+  root@vagrant:~# mdadm -D /dev/md1
+/dev/md1:
+           Version : 1.2
+     Creation Time : Tue Feb  8 14:34:16 2022
+        Raid Level : raid1
+        Array Size : 2094080 (2045.00 MiB 2144.34 MB)
+     Used Dev Size : 2094080 (2045.00 MiB 2144.34 MB)
+      Raid Devices : 2
+     Total Devices : 2
+       Persistence : Superblock is persistent
+
+       Update Time : Tue Feb  8 21:09:55 2022
+             State : clean, degraded
+    Active Devices : 1
+   Working Devices : 1
+    Failed Devices : 1
+     Spare Devices : 0
+
+Consistency Policy : resync
+
+              Name : vagrant:1  (local to host vagrant)
+              UUID : 85a3e676:9c8477f6:cff1d34c:eb708867
+            Events : 19
+
+    Number   Major   Minor   RaidDevice State
+       -       0        0        0      removed
+       1       8       33        1      active sync   /dev/sdc1
+
+       0       8       17        -      faulty   /dev/sdb1
+      ```
+      ### 18.
