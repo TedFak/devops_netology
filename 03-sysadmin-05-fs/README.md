@@ -127,5 +127,16 @@ Consistency Policy : resync
        1       8       33        1      active sync   /dev/sdc1
 
        0       8       17        -      faulty   /dev/sdb1
-      ```
-      ### 18.
+```
+### 18.
+```bash
+root@vagrant:~# dmesg
+[27701.361746] md/raid1:md1: Disk failure on sdb1, disabling device.
+               md/raid1:md1: Operation continuing on 1 devices.
+```
+### 19.
+```bash
+root@vagrant:~# gzip -t /tmp/new/test.gz
+root@vagrant:~# echo $?
+0
+```
