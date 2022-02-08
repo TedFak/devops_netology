@@ -24,5 +24,45 @@ mdadm: Defaulting to version 1.2 metadata
 mdadm: array /dev/md1 started.
 ```
 ### 7.
-
+```bash
+Continue creating array? y
+mdadm: Defaulting to version 1.2 metadata
+mdadm: array /dev/md0 started.
+root@vagrant:~# lsblk
+...
+sdb                         8:16   0  2.5G  0 disk
+├─sdb1                      8:17   0    2G  0 part
+│ └─md1                     9:1    0    2G  0 raid1
+└─sdb2                      8:18   0  511M  0 part
+  └─md0                     9:0    0 1018M  0 raid0
+sdc                         8:32   0  2.5G  0 disk
+├─sdc1                      8:33   0    2G  0 part
+│ └─md1                     9:1    0    2G  0 raid1
+└─sdc2                      8:34   0  511M  0 part
+  └─md0                     9:0    0 1018M  0 raid0
+```
+### 8.
+```bash 
+root@vagrant:~# pvcreate /dev/md0 /dev/md1
+  Physical volume "/dev/md0" successfully created.
+  Physical volume "/dev/md1" successfully created.
+  ```
+  ### 9.
+  ```bash
+root@vagrant:~# vgcreate vg /dev/md0 /dev/md1
+  Volume group "vg" successfully created
+  root@vagrant:~# vgs
+  VG        #PV #LV #SN Attr   VSize   VFree
+  ubuntu-vg   1   1   0 wz--n- <63.00g <31.50g
+  vg          2   0   0 wz--n-  <2.99g  <2.99g
+  ```
+  ### 10.
+  ```bash
+  root@vagrant:~# lvcreate -L 100M vg /dev/md0
+  Logical volume "lvol0" created.
+root@vagrant:~# lvs
+  LV        VG        Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  ubuntu-lv ubuntu-vg -wi-ao----  31.50g
+  lvol0     vg        -wi-a----- 100.00m
+  ```
 
