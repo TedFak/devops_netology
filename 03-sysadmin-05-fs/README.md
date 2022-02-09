@@ -25,6 +25,7 @@ mdadm: array /dev/md1 started.
 ```
 ### 7.
 ```bash
+root@vagrant:~# mdadm --create --verbose /dev/md0 --level=0 -n 2 /dev/sd{b2,c2}
 Continue creating array? y
 mdadm: Defaulting to version 1.2 metadata
 mdadm: array /dev/md0 started.
