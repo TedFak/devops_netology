@@ -20,7 +20,8 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         TX packets 407  bytes 38608 (38.6 KB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
-```PS C:\Users\User> ipconfig
+```
+PS C:\Users\User> ipconfig
 
 Настройка протокола IP для Windows
 
