@@ -35,7 +35,7 @@ PING: 279ms Дольше всего обрабатывался запрос Coll
 ![image](https://user-images.githubusercontent.com/95320903/153766287-70182981-38dd-4470-91a7-1f5825c66846.png)
 
 ### 3. 
-![image](https://user-images.githubusercontent.com/95320903/153766505-cb8803f1-3600-4e79-8178-b1af3de37d34.png)
+
 
 ### 4.
 ```bash
