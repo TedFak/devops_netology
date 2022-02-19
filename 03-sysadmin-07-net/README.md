@@ -83,10 +83,16 @@ eth0.10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ...
 ```
 ### 4.
-##### Типы агрегации: 
- * Cтатический 
- * Динамический
+##### Типы агрегации интерфейсов: 
+ * mode=0 (balance-rr)
+ * mode=1 (active-backup)
+ * mode=2 (balance-xor)
+ * mode=3 (broadcast)
+ * mode=4 (802.3ad)
+ * mode=5 (balance-tlb)
+ * mode=6 (balance-alb)
 
 ##### Опции балансировки:
  * Балансировка нагрузки по MAC-адресам или IP-адресам 
  * Балансировка нагрузки по портам
+
