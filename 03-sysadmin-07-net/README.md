@@ -50,7 +50,7 @@ PS C:\Users\User> ipconfig
    DNS-суффикс подключения . . . . . :
    ```
 ### 2.
-LLDP – протокол для обмена информацией между соседними устройствами
+LLDP – протокол для обмена информацией между соседними устройствами.
 ```bash
 root@vagrant:~# lldpctl
 -------------------------------------------------------------------------------
@@ -58,29 +58,16 @@ LLDP neighbors:
 -------------------------------------------------------------------------------
 ```
 ### 3.
-Используется технология - VLAN
+Используется технология - VLAN.
 
-Используется пакет команд vlan
+Используется пакет команд vlan.
 ```bash
-vagrant@vagrant:~$ ifconfig
-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
-        inet6 fe80::a00:27ff:feb1:285d  prefixlen 64  scopeid 0x20<link>
-        ether 08:00:27:b1:28:5d  txqueuelen 1000  (Ethernet)
-        RX packets 185125  bytes 260007090 (260.0 MB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 39927  bytes 3044234 (3.0 MB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-eth0.10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 10.0.0.1  netmask 255.255.255.0  broadcast 0.0.0.0
-        inet6 fe80::a00:27ff:feb1:285d  prefixlen 64  scopeid 0x20<link>
-        ether 08:00:27:b1:28:5d  txqueuelen 1000  (Ethernet)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 6  bytes 516 (516.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-...
+vagrant@vagrant:~$ cat /etc/network/interfaces
+auto eth0.10
+iface eth0.10 inet static
+        address 192.168.1.1
+        netmask 255.255.255.0
+        vlan_raw_device eth0
 ```
 ### 4.
 ##### Типы агрегации интерфейсов: 
@@ -93,6 +80,66 @@ eth0.10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
  * mode=6 (balance-alb)
 
 ##### Опции балансировки:
- * Балансировка нагрузки по MAC-адресам или IP-адресам 
- * Балансировка нагрузки по портам
+ * arp_interval
+ * arp_ip_target
+ * downdelay
+ * lacp_rate
+ * max_bonds
+ * miimon
+```bash
+vagrant@vagrant:~$ cat /etc/network/interfaces
+...
+auto bond0
 
+iface bond0 inet static
+    address 10.31.1.5
+    netmask 255.255.255.0
+    network 10.31.1.0
+    gateway 10.31.1.254
+    bond-slaves eth0 eth1
+    bond-mode active-backup
+    bond-miimon 100
+    bond-downdelay 200
+    bond-updelay 200
+```
+### 5.
+В сети с маской /29 8 Ip-адресов.
+
+Из сети с маской /24 можно получить 32 подсети с маской /29.
+```bash
+vagrant@vagrant:~$ ipcalc -b 10.10.10.0/29
+Address:   10.10.10.0
+Netmask:   255.255.255.248 = 29
+Wildcard:  0.0.0.7
+=>
+Network:   10.10.10.0/29
+HostMin:   10.10.10.1
+HostMax:   10.10.10.6
+Broadcast: 10.10.10.7
+Hosts/Net: 6                     Class A, Private Internet
+vagrant@vagrant:~$ ipcalc -b 10.10.10.0/24
+Address:   10.10.10.0
+Netmask:   255.255.255.0 = 24
+Wildcard:  0.0.0.255
+=>
+Network:   10.10.10.0/24
+HostMin:   10.10.10.1
+HostMax:   10.10.10.254
+Broadcast: 10.10.10.255
+Hosts/Net: 254                   Class A, Private Internet
+vagrant@vagrant:~$ ipcalc -b 10.10.10.0/24 /29
+...
+ 32.
+Network:   10.10.10.248/29
+HostMin:   10.10.10.249
+HostMax:   10.10.10.254
+Broadcast: 10.10.10.255
+Hosts/Net: 6                     Class A, Private Internet
+
+
+Subnets:   32
+Hosts:     192
+```
+### 6.
+
+### 7.
