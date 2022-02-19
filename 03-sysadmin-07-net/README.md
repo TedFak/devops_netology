@@ -185,8 +185,5 @@ Unused:
 100.96.0.0/11
 ```
 ### 7.
-В WINDOWS
-```
-arp -a
-```
+В WINDOWS `arp -a`
 
