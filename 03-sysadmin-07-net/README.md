@@ -59,6 +59,7 @@ LLDP neighbors:
 ```
 ### 3.
 Используется технология - VLAN
+
 Используется пакет команд vlan
 ```bash
 vagrant@vagrant:~$ ifconfig
