@@ -1,5 +1,6 @@
 
 ### 1.
+В LINUX:
 ```bash
 vagrant@vagrant:~$ ifconfig
 eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -20,6 +21,7 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         TX packets 407  bytes 38608 (38.6 KB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
+В WINDOWS:
 ```
 PS C:\Users\User> ipconfig
 
@@ -47,3 +49,36 @@ PS C:\Users\User> ipconfig
    Состояние среды. . . . . . . . : Среда передачи недоступна.
    DNS-суффикс подключения . . . . . :
    ```
+### 2.
+LLDP – протокол для обмена информацией между соседними устройствами
+```bash
+root@vagrant:~# lldpctl
+-------------------------------------------------------------------------------
+LLDP neighbors:
+-------------------------------------------------------------------------------
+```
+### 3.
+Используется технология - VLAN
+Используется пакет команд vlan
+```bash
+vagrant@vagrant:~$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::a00:27ff:feb1:285d  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:b1:28:5d  txqueuelen 1000  (Ethernet)
+        RX packets 185125  bytes 260007090 (260.0 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 39927  bytes 3044234 (3.0 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0.10: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.255.255.0  broadcast 0.0.0.0
+        inet6 fe80::a00:27ff:feb1:285d  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:b1:28:5d  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6  bytes 516 (516.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+```
+### 4.
