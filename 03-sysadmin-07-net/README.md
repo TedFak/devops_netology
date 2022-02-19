@@ -186,6 +186,9 @@ Unused:
 ```
 ### 7.
 В WINDOWS `arp -a`
+
 В Linux `arp`
+
 Очистить ARP кэш `ip -s -s neigh flush all`
+
 Удалить только один нужный Ip-адрес `arp -d <IP>`
