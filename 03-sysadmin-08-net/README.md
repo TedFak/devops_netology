@@ -73,6 +73,7 @@ root@vagrant:~# ip link
     link/ether f2:f8:6a:6f:2f:eb brd ff:ff:ff:ff:ff:ff
 root@vagrant:~# ip route add 192.168.2.0/24 dev dummy0
 Error: Device for nexthop is not up.
+```
 ### 3.
 
 ### 4.
