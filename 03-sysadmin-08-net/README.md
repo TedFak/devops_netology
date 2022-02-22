@@ -75,8 +75,23 @@ root@vagrant:~# ip route add 192.168.2.0/24 dev dummy0
 Error: Device for nexthop is not up.
 ```
 ### 3.
-
+Локальный адрес - 127.0.0.1 этот сервис доступен только на этом компьтере.
+0.0.0.0 или :: означает любой адрес, к таким сервисам могут подключаться из сети.
+```bash
+vagrant@vagrant:~$ sudo netstat -ntlp | grep LISTEN
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      601/systemd-resolve
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      847/sshd: /usr/sbin
+tcp6       0      0 :::22                   :::*                    LISTEN      847/sshd: /usr/sbin
+```
 ### 4.
-
+systemd-resolved — служба systemd, выполняющая разрешение сетевых имён для локальных приложений.
+systemd-networkd — системный демон для управления сетевыми настройками.
+```bash
+vagrant@vagrant:~$ sudo netstat -nulp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           601/systemd-resolve
+udp        0      0 10.0.2.15:68            0.0.0.0:*                           598/systemd-network
+```
 ### 5. 
 ![Diagram](https://raw.githubusercontent.com/TedFak/devops_netology_2/main/03-sysadmin-08-net/Untitled%20Diagram.drawio.png)
