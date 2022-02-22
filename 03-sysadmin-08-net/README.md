@@ -94,4 +94,4 @@ udp        0      0 127.0.0.53:53           0.0.0.0:*                           
 udp        0      0 10.0.2.15:68            0.0.0.0:*                           598/systemd-network
 ```
 ### 5. 
-![Diagram](https://raw.githubusercontent.com/TedFak/devops_netology_2/main/03-sysadmin-08-net/Untitled%20Diagram.drawio.png)
+![Diagram](https://github.com/TedFak/devops_netology_2/blob/main/03-sysadmin-08-net/Untitled%20Diagram.drawio.png)
