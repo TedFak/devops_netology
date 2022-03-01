@@ -53,7 +53,8 @@ root@vagrant:~# echo "options dummy numdummies=2" > /etc/modprobe.d/dummy.conf
 ...
 auto dummy0
 iface dummy0 inet static
-        address 10.2.2.2/32
+        address 192.168.1.0
+        netmask 255.255.255.0
         pre-up ip link add dummy0 type dummy
         post-down ip link del dummy0
 root@vagrant:~# sudo modprobe -v dummy numdummies=2
@@ -71,8 +72,13 @@ root@vagrant:~# ip link
     link/ether 76:76:b2:40:a7:ab brd ff:ff:ff:ff:ff:ff
 6: dummy1: <BROADCAST,NOARP> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
     link/ether f2:f8:6a:6f:2f:eb brd ff:ff:ff:ff:ff:ff
-root@vagrant:~# ip route add 192.168.2.0/24 dev dummy0
-Error: Device for nexthop is not up.
+vagrant@vagrant:~$ sudo ip route add 192.168.1.0/24 via 192.168.1.0 dev dummy0
+vagrant@vagrant:~$ ip route
+default via 10.0.2.2 dev eth0 proto dhcp src 10.0.2.15 metric 100
+10.0.0.0/24 dev eth0.10 proto kernel scope link src 10.0.0.1
+10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.15
+10.0.2.2 dev eth0 proto dhcp scope link src 10.0.2.15 metric 100
+192.168.1.0/24 dev dummy0 proto kernel scope link src 192.168.1.0
 ```
 ### 3.
 Локальный адрес - 127.0.0.1 этот сервис доступен только на этом компьтере.
