@@ -36,3 +36,40 @@ admin1@admin1-VirtualBox:~$ systemctl restart apache2
 мар 11 22:38:24 admin1-VirtualBox apachectl[2629]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
 мар 11 22:38:24 admin1-VirtualBox systemd[1]: Started The Apache HTTP Server.
 ```
+### 4.
+```bash
+vagrant@vagrant:~/TLC/testssl.sh$ ./testssl.sh -U --sneaky https://www.google.com/
+
+###########################################################
+    testssl.sh       3.1dev from https://testssl.sh/dev/
+    (88cf7e6 2022-03-09 20:16:24 -- )
+
+      This program is free software. Distribution and
+             modification under GPLv2 permitted.
+      USAGE w/o ANY WARRANTY. USE IT AT YOUR OWN RISK!
+
+       Please file bugs @ https://testssl.sh/bugs/
+
+###########################################################
+
+ Using "OpenSSL 1.0.2-chacha (1.0.2k-dev)" [~183 ciphers]
+ on vagrant:./bin/openssl.Linux.x86_64
+ (built: "Jan 18 17:12:17 2019", platform: "linux-x86_64")
+
+
+Testing all IPv4 addresses (port 443): 74.125.205.99 74.125.205.147 74.125.205.106 74.125.205.103 74.125.205.105 74.125.205.104
+--------------------------------------------------------------------------------
+ Start 2022-03-11 19:54:04        -->> 74.125.205.99:443 (www.google.com) <<--
+
+ Further IP addresses:   74.125.205.104 74.125.205.105 74.125.205.103 74.125.205.106 74.125.205.147
+                         2a00:1450:4010:c02::63 2a00:1450:4010:c02::68 2a00:1450:4010:c02::67 2a00:1450:4010:c02::6a
+ rDNS (74.125.205.99):   le-in-f99.1e100.net.
+ Service detected:       HTTP
+
+
+ Testing vulnerabilities
+
+ Heartbleed (CVE-2014-0160)                not vulnerable (OK), no heartbeat extension
+ CCS (CVE-2014-0224)                       not vulnerable (OK)
+ Ticketbleed (CVE-2016-9244), experiment.  not vulnerable (OK)
+ ```
