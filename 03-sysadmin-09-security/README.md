@@ -28,5 +28,5 @@ Organizational Unit Name (eg, section) []:MeOrgan
 Common Name (e.g. server FQDN or YOUR name) []:apachetest.lab
 Email Address []:host@apachetest.lab
 admin1@admin1-VirtualBox:~$ systemctl restart apache2
-
 ```
+![image](https://user-images.githubusercontent.com/95320903/157947335-7118a4f1-b01b-4a28-96a4-4b3aab0e049c.png)
