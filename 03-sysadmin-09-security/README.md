@@ -126,6 +126,12 @@ More information can be found at https://github.com/chef/bento
 Last login: Sat Mar 12 19:05:53 2022 from 127.0.0.1
 ```
 ### 7.
-
+```bash
+dmin1@admin1-VirtualBox:~$ sudo tcpdump -c 100 -w test.pcap
+tcpdump: listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
+100 packets captured
+111 packets received by filter
+0 packets dropped by kernel
+```
 ![image](https://user-images.githubusercontent.com/95320903/158032562-22648188-54b2-495c-acfa-d5dd8f20c1a9.png)
 
