@@ -77,4 +77,20 @@ Testing all IPv4 addresses (port 443): 74.125.205.99 74.125.205.147 74.125.205.1
 ```bash
 admin1@admin1-VirtualBox:~$ ssg-ketgen
 admin1@admin1-VirtualBox:~$ ssh-copy-id 10.0.2.15
-admin1@admin1-VirtualBox:~$
+admin1@admin1-VirtualBox:~$ ssh 10.0.2.15
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.13.0-35-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+26 обновлений может быть применено немедленно.
+15 из этих обновлений, являются стандартными обновлениями безопасности.
+Чтобы просмотреть дополнительные обновления выполните: apt list --upgradable
+
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
+Last login: Sat Mar 12 18:02:04 2022 from 10.0.2.15
+```
+### 6.
+```bash
+
