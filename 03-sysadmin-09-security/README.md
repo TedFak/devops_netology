@@ -73,3 +73,8 @@ Testing all IPv4 addresses (port 443): 74.125.205.99 74.125.205.147 74.125.205.1
  CCS (CVE-2014-0224)                       not vulnerable (OK)
  Ticketbleed (CVE-2016-9244), experiment.  not vulnerable (OK)
  ```
+### 5.
+```bash
+admin1@admin1-VirtualBox:~$ ssg-ketgen
+admin1@admin1-VirtualBox:~$ ssh-copy-id 10.0.2.15
+admin1@admin1-VirtualBox:~$
