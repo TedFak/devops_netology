@@ -30,6 +30,7 @@ Email Address []:host@apachetest.lab
 admin1@admin1-VirtualBox:~$ systemctl restart apache2
 ```
 ![image](https://user-images.githubusercontent.com/95320903/157947335-7118a4f1-b01b-4a28-96a4-4b3aab0e049c.png)
+![image](https://user-images.githubusercontent.com/95320903/158677629-ec2b8684-40e5-427f-8690-72a4e0659a8a.png)
 
 Не очень понял почему у меня такая ошибка
 ```bash
