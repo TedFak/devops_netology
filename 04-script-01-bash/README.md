@@ -56,7 +56,18 @@ done
 
 ### Ваш скрипт:
 ```bash
-???
+#!/bin/bash
+ip=('192.168.0.1' '173.194.222.113' '87.250.250.242')
+i=5
+while [ $i -gt 0 ]
+  do
+    for check in ${ip[@]}
+      do
+        nc -zv $check 80 &>> netcat.log
+      done
+  done
+ break
+echo "Complited!"
 ```
 
 ## Обязательная задача 4
