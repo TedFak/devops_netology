@@ -32,11 +32,6 @@ admin1@admin1-VirtualBox:~$ systemctl restart apache2
 ![image](https://user-images.githubusercontent.com/95320903/157947335-7118a4f1-b01b-4a28-96a4-4b3aab0e049c.png)
 ![image](https://user-images.githubusercontent.com/95320903/158677629-ec2b8684-40e5-427f-8690-72a4e0659a8a.png)
 
-Не очень понял почему у меня такая ошибка
-```bash
-мар 11 22:38:24 admin1-VirtualBox apachectl[2629]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
-мар 11 22:38:24 admin1-VirtualBox systemd[1]: Started The Apache HTTP Server.
-```
 ### 4.
 ```bash
 vagrant@vagrant:~/TLC/testssl.sh$ ./testssl.sh -U --sneaky https://www.google.com/
