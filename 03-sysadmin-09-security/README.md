@@ -73,11 +73,11 @@ Testing all IPv4 addresses (port 443): 74.125.205.99 74.125.205.147 74.125.205.1
 ```bash
 admin1@admin1-VirtualBox:~$ ssh-keygen
 admin1@admin1-VirtualBox:~$ ssh admin2@10.0.*.27
-The authenticity of host '10.0.14.27 (10.0.14.27)' can't be established.
+The authenticity of host '10.0.*.27 (10.0.*.27)' can't be established.
 ECDSA key fingerprint is SHA256:ECU3Hccm8X/2A4n2RoC+yNp50MmI5dKoB1F6EJmZGdU.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added '10.0.14.27' (ECDSA) to the list of known hosts.
-admin2@10.0.14.27's password: 
+Warning: Permanently added '10.0.*.27' (ECDSA) to the list of known hosts.
+admin2@10.0.*.27's password: 
 Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.13.0-30-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
