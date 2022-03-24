@@ -71,26 +71,32 @@ Testing all IPv4 addresses (port 443): 74.125.205.99 74.125.205.147 74.125.205.1
  ```
 ### 5.
 ```bash
-vagrant@vagrant:~$ ssg-ketgen
-vagrant@vagrant:~$ ssh-copy-id 127.0.0.1
-vagrant@vagrant:~$ ssh vagrant@127.0.0.1
-Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-91-generic x86_64)
+admin1@admin1-VirtualBox:~$ ssh-keygen
+admin1@admin1-VirtualBox:~$ ssh admin2@10.0.*.27
+The authenticity of host '10.0.14.27 (10.0.14.27)' can't be established.
+ECDSA key fingerprint is SHA256:ECU3Hccm8X/2A4n2RoC+yNp50MmI5dKoB1F6EJmZGdU.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.0.14.27' (ECDSA) to the list of known hosts.
+admin2@10.0.14.27's password: 
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.13.0-30-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com
  * Management:     https://landscape.canonical.com
  * Support:        https://ubuntu.com/advantage
 
-  System information as of Sat 12 Mar 2022 07:05:53 PM UTC
+0 updates can be applied immediately.
 
-  System load:  0.01               Processes:             122
-  Usage of /:   11.6% of 30.88GB   Users logged in:       1
-  Memory usage: 22%                IPv4 address for eth0: 10.0.2.15
-  Swap usage:   0%
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
 
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
 
-This system is built by the Bento project by Chef Software
-More information can be found at https://github.com/chef/bento
-Last login: Sat Mar 12 19:04:17 2022 from 10.0.2.2
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+admin2@admin2-VirtualBox:~$ 
+
 ```
 ### 6.
 ```bash
