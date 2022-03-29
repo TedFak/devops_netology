@@ -19,8 +19,7 @@ c = a + b
 ### Вопросы:
 | Вопрос  | Ответ |
 | ------------- | ------------- |
-| Какое значение будет присвоено переменной `c`?  |  >>> a = 1; b = '2'; c = a + b; print(c) Traceback (most recent call last): File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'int' and 'str'  |
+| Какое значение будет присвоено переменной `c`?  |  >>> a = 1; b = '2'; c = a + b; print(c) Traceback (most recent call last): File "<stdin>", line 1, in <module> TypeError: unsupported operand type(s) for +: 'int' and 'str'  |
 | Как получить для переменной `c` значение 12?  |  >>> a = 1; b = '2'; c =str(a)+b; print(c) 12  |
 | Как получить для переменной `c` значение 3?  | >>> a = 1; b = '2'; c =a+int(b); print(c) 3  |
 
