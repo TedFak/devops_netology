@@ -47,21 +47,22 @@ for result in result_os.split('\n'):
 
 import os
 
-bash_command = ["cd ~/netology/sysadm-homeworks", "git status"]
+dir = '~/netology/sysadm-homeworks'
+bash_command = ["cd {}".format(dir), "git status"]
 result_os = os.popen(' && '.join(bash_command)).read()
-#is_change = False
+# is_change = False
 for result in result_os.split('\n'):
     if result.find('modified') != -1:
-        prepare_result = result.replace('\tmodified:   ', '')
-        print(os.path.abspath(prepare_result))
+        prepare_result = dir+'/'+result.replace('\tmodified:   ', '')
+        print(prepare_result)
 #        break
 ```
 
 ### Вывод скрипта при запуске при тестировании:
 ```bash
 vagrant@vagrant:~$ ./python.py
-/home/vagrant/.gitignore
-/home/vagrant/README.md
+~/netology/sysadm-homeworks/.gitignore
+~/netology/sysadm-homeworks/README.md
 ```
 
 ## Обязательная задача 3
