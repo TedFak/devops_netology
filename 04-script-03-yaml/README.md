@@ -30,22 +30,58 @@
 
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import socket
+import json
+import yaml
+import time
+
+
+service = {'drive.google.com':'', 'mail.google.com':'', 'google.com':''}
+for host, oldip in service.items():
+    service[host]=socket.gethostbyname(host)
+
+while 1==1:
+ for host, oldip in service.items():
+    newip=socket.gethostbyname(host)
+    if newip!=oldip:
+        print("[ERROR] {} IP mismatch: {} {}".format(host,oldip,newip))
+        service[host]=newip
+    else:
+        print("{} - {}".format(host,newip))
+        to_json = service
+        with open('test.json', 'w') as f:
+            json.dump(to_json, f)
+        with open('test.yaml', 'w') as file:
+            file.write(yaml.dump(to_json))
+ time.sleep(2)
 ```
 
 ### Вывод скрипта при запуске при тестировании:
-```
-???
+```bash
+a.chulanov@dev52:~/IdeaProjects/first$ ./test.py 
+drive.google.com - 64.233.164.194
+[ERROR] mail.google.com IP mismatch: 209.85.233.83 209.85.233.17
+[ERROR] google.com IP mismatch: 173.194.73.113 173.194.73.100
+drive.google.com - 64.233.164.194
+[ERROR] mail.google.com IP mismatch: 209.85.233.17 209.85.233.19
+[ERROR] google.com IP mismatch: 173.194.73.100 173.194.73.102
+drive.google.com - 64.233.164.194
+[ERROR] mail.google.com IP mismatch: 209.85.233.19 209.85.233.18
+google.com - 173.194.73.102
 ```
 
 ### json-файл(ы), который(е) записал ваш скрипт:
 ```json
-???
+{"drive.google.com": "64.233.164.194", "mail.google.com": "209.85.233.18", "google.com": "173.194.73.102"}
 ```
 
 ### yml-файл(ы), который(е) записал ваш скрипт:
 ```yaml
-???
+drive.google.com: 64.233.164.194
+google.com: 173.194.73.102
+mail.google.com: 209.85.233.18
 ```
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
