@@ -98,12 +98,38 @@ netology/sysadm-homeworks/README.md
 
 ### Ваш скрипт:
 ```python
-???
+#!/usr/bin/env python3
+
+import socket
+import time
+
+service = {'drive.google.com':'', 'mail.google.com':'', 'google.com':''}
+for host, oldip in service.items():
+    service[host]=socket.gethostbyname(host)
+
+while 1==1:
+ for host, oldip in service.items():
+    newip=socket.gethostbyname(host)
+    if newip!=oldip:
+        print("[ERROR] {} IP mismatch: {} {}".format(host,oldip,newip))
+        service[host]=newip
+    else:
+        print("{} - {}".format(host,newip))
+ time.sleep(2)
 ```
 
 ### Вывод скрипта при запуске при тестировании:
-```
-???
+```bash
+a.chulanov@dev52:~/IdeaProjects/first$ ./test.py
+drive.google.com - 64.233.164.194
+mail.google.com - 64.233.161.17
+[ERROR] google.com IP mismatch: 142.251.1.101 142.251.1.138
+drive.google.com - 64.233.164.194
+[ERROR] mail.google.com IP mismatch: 64.233.161.17 64.233.161.18
+[ERROR] google.com IP mismatch: 142.251.1.138 142.251.1.101
+drive.google.com - 64.233.164.194
+mail.google.com - 64.233.161.18
+google.com - 142.251.1.101
 ```
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
@@ -112,10 +138,9 @@ netology/sysadm-homeworks/README.md
 
 ### Ваш скрипт:
 ```python
-???
+
 ```
 
 ### Вывод скрипта при запуске при тестировании:
-```
-???
+```bash
 ```
