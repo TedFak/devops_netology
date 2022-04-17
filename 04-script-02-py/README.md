@@ -107,7 +107,7 @@ service = {'drive.google.com':'', 'mail.google.com':'', 'google.com':''}
 for host, oldip in service.items():
     service[host]=socket.gethostbyname(host)
 
-while 1==1:
+while true:
  for host, oldip in service.items():
     newip=socket.gethostbyname(host)
     if newip!=oldip:
