@@ -79,7 +79,41 @@ root@admin1:/home/admin1# vault server -dev -dev-root-token-id root
 Development mode should NOT be used in production installations!
 admin1@admin1:~$ export VAULT_ADDR=http://127.0.0.1:8200
 admin1@admin1:~$ export VAULT_TOKEN=root
-
+admin1@admin1:~$ vault secrets enable pki
+Success! Enabled the pki secrets engine at: pki/
+admin1@admin1:~$ vault secrets tune -max-lease-ttl=720h pki
+Success! Tuned the secrets engine at: pki/
+admin1@admin1:~$ vault write -field=certificate pki/root/generate/internal \
+>      common_name="example..com" \
+>      ttl=720h > CA_cert.crt
+admin1@admin1:~$ vault write pki/config/urls \
+>      issuing_certificates="$VAULT_ADDR/v1/pki/ca" \
+>      crl_distribution_points="$VAULT_ADDR/v1/pki/crl"
+Success! Data written to: pki/config/urls
+admin1@admin1:~$ vault secrets enable -path=pki_int pki
+Success! Enabled the pki secrets engine at: pki_int/
+admin1@admin1:~$ vault secrets tune -max-lease-ttl=43800h pki_int
+Success! Tuned the secrets engine at: pki_int/
+admin1@admin1:~$ vault write -format=json pki_int/intermediate/generate/internal \
+>      common_name="example.com Intermediate Authority" \
+>      | jq -r '.data.csr' > pki_intermediate.csr
+admin1@admin1:~$ vault write -format=json pki/root/sign-intermediate csr=@pki_intermediate.csr \
+>      format=pem_bundle ttl="43800h" \
+>      | jq -r '.data.certificate' > intermediate.cert.pem
+admin1@admin1:~$ vault write pki_int/intermediate/set-signed certificate=@intermediate.cert.pem
+Success! Data written to: pki_int/intermediate/set-signed
+admin1@admin1:~$ vault write pki_int/roles/example-dot-com \
+>      allowed_domains="example.com" \
+>      allow_subdomains=true \
+>      max_ttl="720h"
+Success! Data written to: pki_int/roles/example-dot-com
+admin1@admin1:~$ vault write pki_int/issue/example-dot-com common_name="test.example.com" ttl="24h"
+Key                 Value
+---                 -----
+ca_chain            [-----BEGIN CERTIFICATE-----
+...
+private_key_type    rsa
+serial_number       38:69:82:7e:4d:7e:f9:fd:f4:27:e6:6f:76:de:6d:61:37:34:41:a5
 ```
 - Процесс установки и настройки сервера nginx
 ```bash
