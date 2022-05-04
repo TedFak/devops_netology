@@ -48,10 +48,55 @@ Anywhere                   ALLOW       127.0.0.0/8
 443 (v6)                   ALLOW       Anywhere (v6)             
 ```
 - Процесс установки и выпуска сертификата с помощью hashicorp vault
+```bash
+admin1@admin1:~$ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+OK
+admin1@admin1:~$ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+...                    
+Получено 8 610 kB за 19с (463 kB/s)                                                                                    
+Чтение списков пакетов… Готово
+admin1@admin1:~$ sudo apt-get update && sudo apt-get install vault
+...
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 36 пакетов не обновлено.
+admin1@admin1:~$ sudo apt install jq
+Чтение списков пакетов… Готово
+...
+Обрабатываются триггеры для libc-bin (2.31-0ubuntu9.7) …
+root@admin1:/home/admin1# vault server -dev -dev-root-token-id root
+==> Vault server configuration:
+
+             Api Address: http://127.0.0.1:8200
+                     Cgo: disabled
+         Cluster Address: https://127.0.0.1:8201
+              Go Version: go1.17.9
+              Listener 1: tcp (addr: "127.0.0.1:8200", cluster address: "127.0.0.1:8201", max_request_duration: "1m30s", max_request_size: "33554432", tls: "disabled")
+               Log Level: info
+                   Mlock: supported: true, enabled: false
+           Recovery Mode: false
+                 Storage: inmem
+                 Version: Vault v1.10.2
+...
+Development mode should NOT be used in production installations!
+admin1@admin1:~$ export VAULT_ADDR=http://127.0.0.1:8200
+admin1@admin1:~$ export VAULT_TOKEN=root
+
+```
 - Процесс установки и настройки сервера nginx
+```bash
+
+```
 - Страница сервера nginx в браузере хоста не содержит предупреждений 
+```bash
+
+```
 - Скрипт генерации нового сертификата работает (сертификат сервера ngnix должен быть "зеленым")
+```bash
+
+```
 - Crontab работает (выберите число и время так, чтобы показать что crontab запускается и делает что надо)
+```bash
+
+```
 
 ## Как сдавать курсовую работу
 
