@@ -128,6 +128,18 @@ admin1@admin1:~$ sudo apt install nginx
 ![image](https://user-images.githubusercontent.com/95320903/168442126-f1c0b326-c9f2-4668-8a08-b4a1f2071107.png)
 - Скрипт генерации нового сертификата работает (сертификат сервера ngnix должен быть "зеленым")
 ```bash
+root@main:/home/admin1# cat skript.sh 
+#!/usr/bin/env bash
+
+export VAULT_ADDR=http://127.0.0.1:8200
+export VAULT_TOKEN=root
+
+vault write -format=json pki_int/issue/example-dot-com common_name="test.example.com" ttl="720h" > /etc/nginx/ssl/test.example.com
+ cat /etc/nginx/ssl/test.example.com | jq -r .data.private_key > /etc/nginx/ssl/test.example.com.key
+ cat /etc/nginx/ssl/test.example.com | jq -r .data.certificate > /etc/nginx/ssl/test.example.com.cert
+ cat /etc/nginx/ssl/test.example.com | jq -r .data.issuing_ca >> /etc/nginx/ssl/test.example.com.cert
+
+systemctl restart nginx
 
 ```
 - Crontab работает (выберите число и время так, чтобы показать что crontab запускается и делает что надо)
